@@ -17,7 +17,7 @@ jobs:
       run: curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
       
     - name: Unzipping Ngrok
-      run: apt install zip unzip && unzip ngrok-stable-linux-amd64.zip && cd ngrok-stable-linux-amd64.zip
+      run: unzip ngrok-stable-linux-amd64.zip && cd ngrok-stable-linux-amd64.zip
       
     - name: Test Ngrok
       run: ./ngrok http 80
