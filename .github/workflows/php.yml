@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Ngrok
 
 on:
   push:
@@ -12,8 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
 
-    - name: Hello, Ubuntu!
-      run: ifconfig
+    - name: Installing ngrok...
+      run: curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+      
+    - name: Unzipping Ngrok
+      run: apt install zip unzip && unzip ngrok-stable-linux-amd64.zip && cd ngrok-stable-linux-amd64.zip
+      
+    - name: Test Ngrok
+      run: ./ngrok http 80
       
